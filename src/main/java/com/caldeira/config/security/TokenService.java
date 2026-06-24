@@ -14,10 +14,10 @@ import java.util.Date;
 @Service
 public class TokenService {
 
-	@Value("${session.jwt.expiration}")
+	@Value("${session.jwt.expiration:86400000}")
 	private String expiration;
 
-	@Value("${session.jwt.secret}")
+	@Value("${session.jwt.secret:$2a$10$z4fao7BU0.bN27q4on2Wk.QU50l/MIvnoWOS3l4JpMyuh9s98BWUS}")
 	private String secret;
 
 	private Key getSigningKey() {
